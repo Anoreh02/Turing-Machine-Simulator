@@ -52,8 +52,7 @@ An interactive and visually engaging JavaScript-based Turing Machine Simulator d
 ## 📂 Installation
 
     **Clone the repository**
-    ```bash
-    git clone https://github.com/Anoreh02/Turing-Machine-Simulator.git
+    ```git clone https://github.com/Anoreh02/Turing-Machine-Simulator.git```
 
     Open index.html in any modern web browser.
 
