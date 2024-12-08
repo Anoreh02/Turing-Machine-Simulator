@@ -1,0 +1,323 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;  /* Dark background color */
+    color: #e0e0e0;  /* Light text color for better contrast */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+h1{
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+#tape-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    overflow-x: auto;
+    max-width: 90%;
+    border: 2px solid #333;
+    padding: 10px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+}
+
+.tape-cell {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #333;
+    margin: 2px;
+    position: relative;
+    border-radius: 4px;
+    color: #e0e0e0;
+}
+
+/* Tape Arrow */
+
+.tape-head {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    z-index: 100;
+    text-decoration: none;
+    text-shadow: 0;
+    width: 13px;
+    height: 13px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    z-index: 9;
+    transform: translate(-50%, 0%) rotate(45deg);
+    animation: move_up_down 4s ease-in-out infinite;
+  }
+  
+  /* Tape head animation */
+  @keyframes move_up_down {
+    0%   { transform: translate(-50%, -5px) rotate(45deg); }  /* Less movement */
+    50%  { transform: translate(-50%, 5px) rotate(45deg); }   /* Less movement */
+    100% { transform: translate(-50%, -5px) rotate(45deg); }  /* Less movement */
+  }
+
+
+
+#user-input, #state-input, #controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+                                        Transition Table 
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+*/
+
+#transition-table {
+    margin: 20px auto;
+    width: 90%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+#transition-table th, #transition-table td {
+    padding: 12px;
+    border: 1px solid #555;
+    font-size: 16px;
+    color: #fff;
+}
+
+#transition-table th {
+    background-color: #444;
+    font-weight: bold;
+}
+
+#transition-table td {
+    background-color: #222;
+}
+
+#transition-table-container {
+    max-height: 300px; /* Adjust the max height as needed */
+    overflow-y: auto;
+}
+
+
+/* ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+                                        Input Field 
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------
+*/
+
+#transition-body input {
+    padding: 10px;
+    width: 90%;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+}
+
+#user-input input[type="text"], #state-input input[type="text"] {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .tape-cell {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    #transition-table th, #transition-table td {
+        font-size: 14px;
+    }
+}
+
+#controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#user-input {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#user-input button {
+    display: block;
+    margin: 10px auto; /* Center the "Initialize Tape" button below the control buttons */
+}
+
+#transition-table + button {
+    display: block;
+    margin: 20px auto; /* Center the "Add Transition" button */
+}
+
+#initialize-tape-container {
+    text-align: center;
+    margin-top: 20px; /* Add some space above if needed */
+}
+
+#initialize-tape-container button {
+    margin-top: 10px; /* Add space above the button if needed */
+}
+
+/* Your existing button styles */
+.button-40 {
+    background-color: #333333;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+  }
+  
+  .button-40:hover {
+    background-color: #444444;
+  }
+  
+  .button-40:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-40 {
+      padding: .75rem 1.5rem;
+    }
+  }
+  
+  .button-addTransition{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    width: 100%; /* Make the container take up the full width */
+    margin: 20px 0; /* Optional: Add some spacing above and below */
+  }
+
+
+  .button-41 {
+    background-color: #FFB300;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+  }
+  
+  .button-41:hover {
+    background-color: #FF8C00;
+  }
+  
+  .button-41:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-41 {
+      padding: .75rem 1.5rem;
+    }
+  }
+  

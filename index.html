@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turing Machine Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Turing Machine Simulator</h1>
+    
+    <!-- Tape display -->
+    <div id="tape-container"></div>
+
+    <!-- User Input for Tape -->
+    <div id="user-input">
+        <label for="tape-input">Enter Example: </label>
+        <input type="text" id="tape-input" placeholder="e.g. 0101">
+    </div>
+
+    <!-- User Input for Transitions -->
+    
+    <div id="transition-table-container">
+        <table id="transition-table">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Read Symbol</th>
+                    <th>Write Symbol</th>
+                    <th>Move (L/R)</th>
+                    <th>Next State</th>
+                </tr>
+            </thead>
+            <tbody id="transition-body">
+                <tr>
+                    <td><input type="text" class="state" placeholder="q0"></td>
+                    <td><input type="text" class="read" placeholder="0"></td>
+                    <td><input type="text" class="write" placeholder="1"></td>
+                    <td><input type="text" class="move" placeholder="R"></td>
+                    <td><input type="text" class="next-state" placeholder="q1"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="button-addTransition">
+        <button class="button-40" role="button" onclick="addTransition()">Add Transition</button>
+    </div>
+    <!-- Control Buttons -->
+    <div id="controls">
+        <button class="button-40" role="button" onclick="startMachine()">Start Machine</button>
+        <button class="button-40" role="button" onclick="stepMachine()">Step</button>
+        <button class="button-40" role="button" onclick="resetMachine()">Reset</button>
+    </div>
+
+    <!-- Accept and Reject State Inputs -->
+    <div id="state-input">
+        <label for="accept-state">Accept State: </label>
+        <input type="text" id="accept-state" placeholder="q_accept">
+        <label for="reject-state">Reject State: </label>
+        <input type="text" id="reject-state" placeholder="q_reject">
+    </div>
+
+    <div id="initialize-tape-container">
+        <button class="button-41" role="button" onclick="initializeMachine()">Initialize Tape</button>
+    </div>
+
+    <script src="turingMachine.js"></script>
+</body>
+</html>
